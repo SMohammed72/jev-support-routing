@@ -1,0 +1,77 @@
+{
+ "case_id": "case_27",
+ "request_sha": "0aa403f17030488f",
+ "request": {
+  "model": "typesafe/jev-1.14",
+  "state": {
+   "channel": "email",
+   "subject": "Gift card scam",
+   "message": "A man on the phone told me to buy $500 of your gift cards to pay a tax bill. Did I get scammed?"
+  },
+  "questions": {
+   "queue": {
+    "type": "choice",
+    "instructions": "Which customer-support queue should handle this message? Pick the queue for the customer's main request.",
+    "criteria": {
+     "billing_refunds": "Charges, double charges, refunds already promised, invoices, promo codes or discounts not applied, unexplained charges on a statement.",
+     "order_shipping": "Where an order is, tracking, delivery dates, changing a delivery address, shipping upgrades, partial or missing deliveries.",
+     "returns_exchanges": "Returning an item, return labels, exchanges for another size or color, return windows, status of a return already sent back.",
+     "tech_login": "Login or password problems, reset emails, two-step verification, app or website errors and crashes, checkout errors.",
+     "account_changes": "Updating profile details such as email or phone number, merging accounts, communication or marketing preferences.",
+     "fraud_security": "Orders or changes the customer did not make, someone else in their account, phishing or scam reports, stolen payment details.",
+     "product_questions": "Questions about a product's size, features, compatibility, care instructions or stock availability.",
+     "complaints_escalation": "The customer is unhappy with service or repeated failures, reports a rude agent, damaged items, or asks for a manager.",
+     "cancellations": "Cancelling an order, a subscription or membership, turning off auto-renew, or closing an account.",
+     "legal_privacy": "Data deletion or data access requests (GDPR, CCPA), legal threats, lawyers, or regulatory complaints.",
+     "other": "Anything else: greetings only, cut-off or empty messages, off-topic questions, business or partnership inquiries."
+    }
+   },
+   "escalation_risk": {
+    "type": "noul",
+    "instructions": "Does the customer threaten legal action, a lawyer, a chargeback or bank dispute, a regulatory complaint, or mention a physical injury or a safety hazard such as fire or smoke?"
+   }
+  },
+  "session_id": "jev-support-routing-case_27"
+ },
+ "status": 200,
+ "latency_s": 0.1295,
+ "body": {
+  "model": "typesafe/jev-1.14-20261014",
+  "answers": {
+   "queue": {
+    "type": "choice",
+    "choice": "fraud_security",
+    "probabilities": {
+     "billing_refunds": 0,
+     "order_shipping": 0,
+     "returns_exchanges": 0,
+     "tech_login": 0,
+     "account_changes": 0,
+     "fraud_security": 1,
+     "product_questions": 0,
+     "complaints_escalation": 0,
+     "cancellations": 0,
+     "legal_privacy": 0,
+     "other": 0
+    },
+    "confidence": 1
+   },
+   "escalation_risk": {
+    "type": "noul",
+    "noul": 0.02
+   }
+  },
+  "usage": {
+   "input_tokens": 779,
+   "output_tokens": 137,
+   "cost": 3.2718e-05,
+   "is_byok": false,
+   "cost_details": {
+    "upstream_inference_cost": 3.2718e-05,
+    "upstream_inference_prompt_cost": 3.2718e-05,
+    "upstream_inference_completions_cost": 0
+   }
+  },
+  "provider": "TypeSafe"
+ }
+}

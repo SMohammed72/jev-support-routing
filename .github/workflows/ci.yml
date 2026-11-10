@@ -1,0 +1,24 @@
+name: ci
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Secret scan (full history)
+        run: python3 scripts/check_secrets.py --history
+      - name: gitleaks (full history)
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar xz gitleaks
+          ./gitleaks git --redact --verbose .
+      - name: Unit tests (no network, no key)
+        run: python3 -m unittest discover -s tests -t . -v
+      - name: Offline run of all 50 cases (replay mode)
+        run: python3 -m jevroute run --mode replay --out runs/ci

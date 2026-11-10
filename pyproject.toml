@@ -1,0 +1,15 @@
+[project]
+name = "jev-support-routing"
+version = "0.1.0"
+description = "Customer-support query routing with the jev decision model on OpenRouter, with a confidence policy that sends uncertain or high-risk tickets to human review."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+chart = ["matplotlib>=3.7"]
+
+[project.scripts]
+jevroute = "jevroute.cli:main"
+
+[tool.setuptools]
+packages = ["jevroute"]

@@ -1,0 +1,13 @@
+{
+  "billing_refunds": "Charges, double charges, refunds already promised, invoices, promo codes or discounts not applied, unexplained charges on a statement.",
+  "order_shipping": "Where an order is, tracking, delivery dates, changing a delivery address, shipping upgrades, partial or missing deliveries.",
+  "returns_exchanges": "Returning an item, return labels, exchanges for another size or color, return windows, status of a return already sent back.",
+  "tech_login": "Login or password problems, reset emails, two-step verification, app or website errors and crashes, checkout errors.",
+  "account_changes": "Updating profile details such as email or phone number, merging accounts, communication or marketing preferences.",
+  "fraud_security": "Orders or changes the customer did not make, someone else in their account, phishing or scam reports, stolen payment details.",
+  "product_questions": "Questions about a product's size, features, compatibility, care instructions or stock availability.",
+  "complaints_escalation": "The customer is unhappy with service or repeated failures, reports a rude agent, damaged items, or asks for a manager.",
+  "cancellations": "Cancelling an order, a subscription or membership, turning off auto-renew, or closing an account.",
+  "legal_privacy": "Data deletion or data access requests (GDPR, CCPA), legal threats, lawyers, or regulatory complaints.",
+  "other": "Anything else: greetings only, cut-off or empty messages, off-topic questions, business or partnership inquiries."
+}

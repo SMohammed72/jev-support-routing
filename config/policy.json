@@ -1,0 +1,18 @@
+{
+  "model": "typesafe/jev-1.14",
+  "default_threshold": 0.80,
+  "queue_thresholds": {
+    "billing_refunds": 0.90,
+    "cancellations": 0.90,
+    "account_changes": 0.85,
+    "returns_exchanges": 0.80,
+    "complaints_escalation": 0.80,
+    "tech_login": 0.80,
+    "order_shipping": 0.75,
+    "product_questions": 0.70
+  },
+  "min_margin": 0.30,
+  "always_human": ["fraud_security", "legal_privacy"],
+  "no_auto_route": ["other"],
+  "escalation_risk_threshold": 0.50
+}
